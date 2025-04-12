@@ -1,0 +1,51 @@
+-- Preview Consult
+SELECT 
+    a.ASSIGNMENT_ID,
+    mr.ROLE_NAME,
+	a.STAFF_ID,
+    CONCAT(ms.FIRST_NAME, ' ' ,ms.LAST_NAME) as STAFF_NAME,
+    a.PATIENT_ID,
+	CONCAT(p.FIRST_NAME, ' ', p.LAST_NAME) as PATIENT_NAME
+FROM 
+	MEDICAL_STAFF ms
+JOIN
+	MEDICAL_ROL mr ON ms.ROLE_ID = mr.ROLE_ID
+JOIN
+	ASSIGNMENT a ON ms.STAFF_ID = a.STAFF_ID
+JOIN 
+	PATIENTS p ON a.PATIENT_ID =p.PATIENT_ID
+WHERE 
+    a.STAFF_ID = @STAFF_ID OR ms.EMAIL = @EMAIL
+
+-- Create Fuction
+-- Function to show the assign a medical staff to a patient
+CREATE FUNCTION dbo.assigment_staff
+(
+	@STAFF_ID BIGINT,
+	@EMAIL NVARCHAR(100)
+)
+RETURNS TABLE 
+AS
+RETURN
+(
+SELECT 
+    a.ASSIGNMENT_ID,
+    mr.ROLE_NAME,
+	a.STAFF_ID,
+    CONCAT(ms.FIRST_NAME, ' ' ,ms.LAST_NAME) as STAFF_NAME,
+    a.PATIENT_ID,
+	CONCAT(p.FIRST_NAME, ' ', p.LAST_NAME) as PATIENT_NAME
+FROM 
+	MEDICAL_STAFF ms
+JOIN
+	MEDICAL_ROL mr ON ms.ROLE_ID = mr.ROLE_ID
+JOIN
+	ASSIGNMENT a ON ms.STAFF_ID = a.STAFF_ID
+JOIN 
+	PATIENTS p ON a.PATIENT_ID =p.PATIENT_ID
+WHERE 
+    a.STAFF_ID = @STAFF_ID OR ms.EMAIL = @EMAIL
+);
+
+-- call function
+SELECT * FROM dbo.assigment_staff(@STAFF_ID, '@EMAIL')

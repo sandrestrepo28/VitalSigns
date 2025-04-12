@@ -1,0 +1,69 @@
+###🟢Post Insert medical staff
+POST http://localhost:8080/medical_staff/save_Staff
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "staff_id": 510963910,
+    "rol_id": { "role_id": 1 },
+    "first_name_staff": "Santiago",
+    "last_name_staff": "Restrepo",
+    "email": "restrepo@gmail.com"
+}
+
+###🟢Post Insert medical staff
+POST http://localhost:8080/medical_staff/save_Staff
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "staff_id": 592193817,
+    "rol_id": { "role_id": 2 },
+    "first_name_staff": "David",
+    "last_name_staff": "Herrera",
+    "email": "herrera@gmail.com"
+}
+
+
+###🟢Post Insert medical staff
+POST http://localhost:8080/medical_staff/save_Staff
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "staff_id": 581133817,
+    "rol_id": { "role_id": 3 },
+    "first_name_staff": "Angel",
+    "last_name_staff": "Colla",
+    "email": "colla@gmail.com"
+}
+
+###🔵Get all medical staff rol
+GET http://localhost:8080/medical_staff/
+Authorization: ${Authorization}
+
+###🔵Get medical staff rol by id
+# By Email 📨
+GET http://localhost:8080/medical_staff/search_Staff?email=herrera@gmail.com
+Authorization: ${Authorization}
+
+###By Id 🪪 
+GET http://localhost:8080/medical_staff/search_Staff?staff_id=581133817
+Authorization: ${Authorization}
+
+###🟠Update medical staff
+PUT http://localhost:8080/medical_staff/update_Staff
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "staff_id": 581133817,
+    "rol_id": { "role_id": 4 },
+    "first_name_staff": "Angel",
+    "last_name_staff": "Colla",
+    "email": "colla@gmail.com"
+}
+
+###🔴Delete medical staff
+DELETE http://localhost:8080/medical_staff/delete_Staff/581133817
+Authorization: ${Authorization}

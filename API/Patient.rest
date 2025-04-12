@@ -1,0 +1,80 @@
+### 🟢 Insert Patient 
+POST http://localhost:8080/patient/save_Patient
+Authorization: ${Authorization}
+STAFF-ID: 510963910
+STAFF-EMAIL:restrepo@gmail.com
+Content-Type: application/json
+
+{
+    "patient_id": 5003588936052588,
+    "first_name_patient": "Wilson ",
+    "last_name_patient": "Palermo",
+    "date_of_birth": "1995-05-11",
+    "gender": "M",
+    "age": 30,
+    "blood_type": "O-"
+}
+
+### 🟢 Insert Patient 
+POST http://localhost:8080/patient/save_Patient
+Authorization: ${Authorization}
+STAFF-ID: 592193817
+STAFF-EMAIL:herrera@gmail.com
+Content-Type: application/json
+
+{
+    "patient_id": 4368943659405061,
+    "first_name_patient": "Talía",
+    "last_name_patient": "Mansukhani",
+    "date_of_birth": "2007-02-13",
+    "gender": "F",
+    "age": 18,
+    "blood_type": "B-"}
+
+### 🟢 Insert Patient 
+POST http://localhost:8080/patient/save_Patient
+Authorization: ${Authorization}
+STAFF-ID: 581133817
+STAFF-EMAIL:colla@gmail.com
+Content-Type: application/json
+
+{
+    "patient_id": 5303727478053805,
+    "first_name_patient": "Nelson",
+    "last_name_patient": "Vornicu",
+    "date_of_birth": "1974-05-28",
+    "gender": "M",
+    "age": 51,
+    "blood_type": "O+"
+}
+
+### 🔵 Get all patients
+GET http://localhost:8080/patient/
+Authorization: ${Authorization}
+
+### 🔵 Get patient by i
+GET http://localhost:8080/patient/search_Patient/5003588936052588
+Authorization: ${Authorization}
+
+### 🟠 Update Patient 
+PUT http://localhost:8080/patient/update_Patient
+Authorization: ${Authorization}
+STAFF-ID: 510963910
+STAFF-EMAIL: restrepo@gmail.com
+Content-Type: application/json
+
+{
+    "patient_id": 5003588936052588,
+    "first_name_patient": "Wilson",
+    "last_name_patient": "Palermo",
+    "date_of_birth": "1995-05-11",
+    "gender": "M",
+    "age": 30,
+    "blood_type": "AB+"
+}
+
+### 🔴 Delete Patient
+DELETE http://localhost:8080/patient/delete_Patient/5003588936052588
+Authorization: ${Authorization}
+STAFF-ID: 510963910
+STAFF-EMAIL:restrepo@gmail.com

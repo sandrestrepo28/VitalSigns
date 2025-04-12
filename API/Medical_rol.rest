@@ -1,0 +1,47 @@
+###🟢 POST medical rol
+POST http://localhost:8080/rol_medical/createMedicalRol
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "role_id": 1,
+    "role_name": "chief_doctor"
+}
+
+### 🟢 POST medical rol list
+POST http://localhost:8080/rol_medical/createMedicalRolList
+Authorization: ${Authorization}
+Content-Type: application/json
+
+[
+    {
+        "role_id": 2,
+        "role_name": "doctor"
+    },
+    {
+        "role_id": 3,
+        "role_name": "nurse"
+    },
+    {
+        "role_id": 4,
+        "role_name": "caregiver"
+    }
+]
+
+###🔵 Get all medical rol
+GET http://localhost:8080/rol_medical/
+Authorization: ${Authorization}
+
+###🔵 Get medical rol by id
+GET http://localhost:8080/rol_medical/3
+Authorization: ${Authorization}
+
+
+###🟠 Update medical rol
+POST http://localhost:8080/rol_medical/updateMedicalRol/4
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "role_name": "nursing_assistant"
+}

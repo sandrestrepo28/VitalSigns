@@ -1,0 +1,53 @@
+### 🟢 Post Insert assignment
+POST http://localhost:8080/assignment/save_Assignment
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "staffId": {
+        "staff_id": 510963910
+    },
+    "patientId": {
+        "patient_id": 4368943659405061
+    }
+}
+
+### 🟢 Post Insert assignment
+POST http://localhost:8080/assignment/save_Assignment
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "staffId": {
+        "staff_id": 581133817
+    },
+    "patientId": {
+        "patient_id": 5003588936052588
+    }
+}
+
+###🔵 Get all assignment
+GET http://localhost:8080/assignment/
+Authorization: ${Authorization}
+
+### Get assignment by Orden
+GET http://localhost:8080/assignment/orden
+Authorization: ${Authorization}
+
+###🔵 Get assignment by MedicalStaff
+### By email 📨
+GET http://localhost:8080/assignment/assignment_Staff?email=restrepo@gmail.com
+Authorization: ${Authorization}
+
+### By ID 🪪
+GET http://localhost:8080/assignment/assignment_Staff?staff_id=510963910
+Authorization: ${Authorization}
+
+###🔵 Get assignment by Patient
+### By ID 🪪
+GET http://localhost:8080/assignment/assignment_Patient?patient_id=4368943659405061
+Authorization: ${Authorization}
+
+### 🔴 Delete assignment 
+DELETE http://localhost:8080/assignment/delete_Assignment/50abe2ee-9d2e-4a70-938b-8f772c300608
+Authorization: ${Authorization}

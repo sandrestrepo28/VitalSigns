@@ -1,0 +1,62 @@
+### 🟢 Post Insert vital
+POST http://localhost:8080/vital/save_vital
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{   
+    "assignment_id": {
+        "assignment_id": "a3407462-4bcb-4211-abc7-397403f2ba5f"
+    },
+    "heart_rate": 90,
+    "saturation": 95,
+    "respiratory_rate":20,
+    "temperature": 36,
+    "blood_glucose":99,
+    "blood_pressure": "120/80",
+    "note_medical":"El paciente se encuentra en buen estado"
+}
+
+### 🟢 Post Insert vital
+POST http://localhost:8080/vital/save_vital
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{   
+    "assignment_id": {
+        "assignment_id": "2483fbb3-fb33-4bc3-9757-93f2c72f3343"
+    },
+    "heart_rate":60,
+    "saturation": 79,
+    "respiratory_rate":11,
+    "temperature": 35,
+    "blood_glucose":70,
+    "blood_pressure": "90/60" ,
+    "note_medical":"El paciente se encuentra en estado crítico"
+}
+
+###🔵 Get vital by Patient 
+GET http://localhost:8080/vital/vital_patient?patient_id=5003588936052588
+Authorization: ${Authorization}
+
+###🔵 Get vital by ID
+GET http://localhost:8080/vital/vital_id/240d4b55-f35f-4076-b282-e9d0d45ca76b
+Authorization: ${Authorization}
+
+### 🔴 Delete vital
+DELETE http://localhost:8080/vital/delete_vital/45455a86-22a1-421c-a4b0-85e5f649ae76
+Authorization: ${Authorization}
+
+### IA
+GET http://localhost:8080/vital/chat_vital/240d4b55-f35f-4076-b282-e9d0d45ca76b
+Authorization: ${Authorization}
+
+### IA Question
+GET http://localhost:8080/chat
+Authorization: ${Authorization}
+Content-Type: application/json
+
+{
+    "question": "Que es la frecuencia cardiaca?"
+}
+
+
